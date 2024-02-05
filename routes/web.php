@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OverzichtController;
 use App\Http\Controllers\AllergeenController;
 use App\Http\Controllers\LeverancierController;
+use App\Http\Controllers\OverzichtLeverancierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::get('/overzicht', [OverzichtController::class, 'index',])->name('overzich
 Route::get('/allergie/{id}', [AllergeenController::class, 'index',])->name('allergie.index');
 
 Route::get('/leverancier/{id}', [LeverancierController::class, 'index'])->name('leverancier.index');
+
+Route::get('/leverancier-overzicht', [OverzichtLeverancierController::class, 'index',])->name('leverancier-overzicht.index');
