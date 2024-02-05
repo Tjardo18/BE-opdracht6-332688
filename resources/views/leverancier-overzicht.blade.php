@@ -26,12 +26,12 @@
     </div>
     <table>
         <thead>
-        <th>Barcode</th>
         <th>Naam</th>
-        <th>Verpakkingseenheid</th>
-        <th>Aantal Aanwezig</th>
-        <th>Allergenen Info</th>
-        <th>Leverantie Info</th>
+        <th>Contactpersoon</th>
+        <th>Leveranciernummer</th>
+        <th>Mobiel</th>
+        <th>Aantal verschillende producten</th>
+        <th>Toon producten</th>
         </thead>
         <tbody>
         {!! $rows !!}
