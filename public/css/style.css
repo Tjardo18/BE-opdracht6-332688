@@ -100,11 +100,11 @@ th:last-child {
     border-radius: 0 12px 0 0;
 }
 
-tbody>tr:last-child>td:first-child {
+tbody > tr:last-child > td:first-child {
     border-radius: 0 0 0 12px;
 }
 
-tbody>tr:last-child>td:last-child {
+tbody > tr:last-child > td:last-child {
     border-radius: 0 0 12px 0;
 }
 

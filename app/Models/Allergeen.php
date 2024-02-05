@@ -24,7 +24,6 @@ class Allergeen extends Model
     public $timestamps = true; // default value is false
 
 
-
     public function getAllergien($id)
     {
         return $this->select('allergeen.naam AS ANaam', 'allergeen.omschrijving')

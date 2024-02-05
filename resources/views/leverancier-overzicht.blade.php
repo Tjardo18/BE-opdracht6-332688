@@ -13,7 +13,7 @@
 <body>
 
 <div class="logo">
-    <a href="{{ url('/overzicht') }}">
+    <a href="{{ url('/') }}">
         <img src="{{ asset('img/logo-wit.png') }}">
     </a>
 </div>
@@ -40,7 +40,7 @@
 </div>
 
 <script src="{{ asset('js/column.js') }}"></script>
-<script src="{{ asset('js/copy.js') }}"></script>
+{{--<script src="{{ asset('js/copy.js') }}"></script>--}}
 
 </body>
 

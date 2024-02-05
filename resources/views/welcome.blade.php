@@ -13,7 +13,7 @@
 <body>
 
 <div class="logo">
-    <a href="{{ url('/overzicht') }}">
+    <a href="{{ url('/') }}">
         <img src="{{ asset('img/logo-wit.png') }}">
     </a>
 </div>

@@ -51,6 +51,7 @@ class Leverancier extends Model
     public function getLeverancierIndividual()
     {
         return $this->select(
+            'leverancier.id',
             'leverancier.naam AS Naam',
             'leverancier.contactPersoon AS ContactPersoon',
             'leverancier.leverancierNummer AS LeverancierNummer',
