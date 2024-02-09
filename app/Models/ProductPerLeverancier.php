@@ -31,7 +31,7 @@ class ProductPerLeverancier extends Model
     public function getLeveringen($id)
     {
         return $this->select(
-            'leverancier.id AS Lid',
+            'product.id AS Pid',
             'product.naam AS PNaam',
             'magazijn.VerpakkingsEenheid AS VerpakkingsEenheid',
             'productperleverancier.datumLevering AS DatumLevering',
@@ -40,6 +40,12 @@ class ProductPerLeverancier extends Model
             ->join('leverancier', 'productperleverancier.LeverancierId', '=', 'leverancier.id')
             ->join('product', 'productperleverancier.productId', '=', 'product.id')
             ->join('magazijn', 'product.id', '=', 'magazijn.productId')
+            ->join(
+                DB::raw('(SELECT productId, MAX(datumLevering) as maxDatumLevering FROM productperleverancier GROUP BY productId) as sub'),
+                function ($join) {
+                    $join->on('productperleverancier.productId', '=', 'sub.productId');
+                    $join->on('productperleverancier.datumLevering', '=', 'sub.maxDatumLevering');
+                })
             ->where('leverancier.id', $id)
             ->orderBy('AantalAanwezig', 'DESC')
             ->get();

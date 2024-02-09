@@ -25,7 +25,7 @@ class LeveringController extends Controller
         if ($result->isEmpty()) {
             $th = '';
             $rows = "<h1 style='text-align: center'>Dit bedrijf heeft tot nu toe geen producten geleverd aan Jamin</h1>";
-            header("Refresh: 4; url=/leverancier-overzicht");
+            header("Refresh: 3; url=/leverancier-overzicht");
         } else {
             $th = "<th>Naam product</th>
         <th>Aantal in magazijn</th>
@@ -41,7 +41,7 @@ class LeveringController extends Controller
                             <td>$levering->VerpakkingsEenheid kg</td>
                             <td>$levering->DatumLevering</td>
                             <td>
-                                <a href='/#/$levering->Lid'>
+                                <a href='/#/$levering->Pid'>
                                     <i class='bx bx-plus-circle' style='color: #ff2287'></i>
                                 </a>
                             </td>
