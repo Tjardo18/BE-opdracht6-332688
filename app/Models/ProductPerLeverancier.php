@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class ProductPerLeverancier extends Model
 {
@@ -32,10 +33,10 @@ class ProductPerLeverancier extends Model
         return $this->select(
             'leverancier.id AS Lid',
             'product.naam AS PNaam',
-            'magazijn.AantalAanwezig AS AantalAanwezig',
             'magazijn.VerpakkingsEenheid AS VerpakkingsEenheid',
             'productperleverancier.datumLevering AS DatumLevering',
         )
+            ->addSelect(DB::raw('IFNULL(magazijn.AantalAanwezig, 0) AS AantalAanwezig'))
             ->join('leverancier', 'productperleverancier.LeverancierId', '=', 'leverancier.id')
             ->join('product', 'productperleverancier.productId', '=', 'product.id')
             ->join('magazijn', 'product.id', '=', 'magazijn.productId')
