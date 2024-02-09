@@ -33,7 +33,7 @@ class ProductPerLeverancier extends Model
             'leverancier.id AS Lid',
             'product.naam AS PNaam',
             'magazijn.AantalAanwezig AS AantalAanwezig',
-            'magazijn.VerpakkingsEenheid AS VerpakkingsEenheid,',
+            'magazijn.VerpakkingsEenheid AS VerpakkingsEenheid',
             'productperleverancier.datumLevering AS DatumLevering',
         )
             ->join('leverancier', 'productperleverancier.LeverancierId', '=', 'leverancier.id')

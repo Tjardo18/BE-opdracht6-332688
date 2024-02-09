@@ -38,11 +38,11 @@ class LeveringController extends Controller
                 $rows .= "<tr>
                             <td>$levering->PNaam</td>
                             <td>$levering->AantalAanwezig</td>
-                            <td>$levering->VerpakkingsEenheid</td>
+                            <td>$levering->VerpakkingsEenheid kg</td>
                             <td>$levering->DatumLevering</td>
                             <td>
                                 <a href='/#/$levering->Lid'>
-                                    <i class='bx bx-plus-circle' style='color: #e422b0'></i>
+                                    <i class='bx bx-plus-circle' style='color: #ff2287'></i>
                                 </a>
                             </td>
                         </tr>";
@@ -53,8 +53,8 @@ class LeveringController extends Controller
             'title' => 'Geleverde Producten',
             'naamLeverancier' => $leverancier[0]->Naam,
             'contactPersoon' => $leverancier[0]->ContactPersoon,
-            'leverancierNummer' => $leverancier[0]->LeverancierNummer,
-            'mobiel' => $leverancier[0]->Mobiel,
+            'leverancierNummer' => $leverancier[0]->leverancierNummer,
+            'mobiel' => $leverancier[0]->mobiel,
             'rows' => $rows,
             'th' => $th,
         ];

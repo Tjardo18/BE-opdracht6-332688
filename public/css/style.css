@@ -127,3 +127,8 @@ tr:not(thead>tr):hover {
 a {
     text-decoration: none;
 }
+
+i {
+    font-size: 18px;
+    font-weight: 800;
+}
