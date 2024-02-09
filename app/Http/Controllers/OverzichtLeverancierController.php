@@ -27,7 +27,7 @@ class OverzichtLeverancierController extends Controller
                 <td>$leverancier->LeverancierNummer</td>
                 <td>$leverancier->Mobiel</td>
                 <td>$leverancier->ProductCount</td>
-                <td><a href='/#/$leverancier->id'>Details</a></td>
+                <td><a href='/leveringen/$leverancier->id'><i class='bx bxs-package' style='color: #000000;'></i></a></td>
                 </tr>";
         }
 

@@ -60,6 +60,21 @@ class Leverancier extends Model
         )
             ->leftJoin('productperleverancier', 'leverancier.id', '=', 'productperleverancier.leverancierId')
             ->groupBy('leverancier.id', 'leverancier.naam', 'leverancier.contactPersoon', 'leverancier.leverancierNummer', 'leverancier.mobiel')
+            ->orderBy('ProductCount', 'DESC')
+            ->get();
+    }
+
+    public function getLeverancierById($id)
+    {
+        return $this->select(
+            'id',
+            'Naam',
+            'ContactPersoon',
+            'leverancierNummer',
+            'mobiel'
+        )
+            ->from('leverancier')
+            ->where('id', $id)
             ->get();
     }
 }

@@ -24,14 +24,21 @@
             {{ $title }}
         </h1>
     </div>
+    <h3>
+        Naam Leverancier: <span>{{ $naamLeverancier }}</span>
+    </h3>
+    <h3>
+        Contactpersoon Leverancier: <span>{{ $contactPersoon }}</span>
+    </h3>
+    <h3>
+        Leveranciernummer: <span>{{ $leverancierNummer }}</span>
+    </h3>
+    <h3>
+        Mobiel: <span>{{ $mobiel }}</span>
+    </h3>
     <table>
         <thead>
-        <th>Naam</th>
-        <th>Contactpersoon</th>
-        <th>Leveranciernummer</th>
-        <th>Mobiel</th>
-        <th>Aantal verschillende producten</th>
-        <th>Toon producten</th>
+        {!! $th !!}
         </thead>
         <tbody>
         {!! $rows !!}
