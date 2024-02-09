@@ -47,7 +47,6 @@
 </div>
 
 <script src="{{ asset('js/column.js') }}"></script>
-<script src="{{ asset('js/copy.js') }}"></script>
 
 </body>
 

@@ -12,36 +12,36 @@
 
 <body>
 
-    <div class="logo">
-        <a href="{{ url('/overzicht') }}">
-            <img src="{{ asset('img/logo-wit.png') }}">
-        </a>
-    </div>
+<div class="logo">
+    <a href="{{ url('/') }}">
+        <img src="{{ asset('img/logo-wit.png') }}">
+    </a>
+</div>
 
-    <div class="card">
-        <div class="title">
-            <h1>
-                {{ $title }}
-            </h1>
-        </div>
-        <h3>
-            Product Naam: <span>{{ $naamProduct }}</span>
-        </h3>
-        <h3>
-            Barcode: <span>{{ $barcode }}</span>
-        </h3>
-        <table>
-            <thead>
-                {!! $th !!}
-            </thead>
-            <tbody>
-                {!! $rows !!}
-            </tbody>
-        </table>
+<div class="card">
+    <div class="title">
+        <h1>
+            {{ $title }}
+        </h1>
     </div>
+    <h3>
+        Product Naam: <span>{{ $naamProduct }}</span>
+    </h3>
+    <h3>
+        Barcode: <span>{{ $barcode }}</span>
+    </h3>
+    <table>
+        <thead>
+        {!! $th !!}
+        </thead>
+        <tbody>
+        {!! $rows !!}
+        </tbody>
+    </table>
+</div>
 
-    <script src="{{ asset('js/column.js') }}"></script>
-    <script src="{{ asset('js/copy.js') }}"></script>
+<script src="{{ asset('js/column.js') }}"></script>
+<script src="{{ asset('js/copy.js') }}"></script>
 
 </body>
 

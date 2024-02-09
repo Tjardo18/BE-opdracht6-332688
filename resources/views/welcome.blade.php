@@ -12,15 +12,26 @@
 
 <body>
 
-    <div class="logo">
-        <a href="{{ url('/overzicht') }}">
-            <img src="{{ asset('img/logo-wit.png') }}">
-        </a>
-    </div>
+<div class="logo">
+    <a href="{{ url('/') }}">
+        <img src="{{ asset('img/logo-wit.png') }}">
+    </a>
+</div>
 
-    <script>
-        window.location.href = '/overzicht';
-    </script>
+<div class="title">
+    <a href="/overzicht">
+        <h1 style="cursor: pointer">Jamin Overzicht</h1>
+    </a>
+</div>
+<div class="title">
+    <a href="/leverancier-overzicht">
+        <h1 style="cursor: pointer">Leverancier Overzicht</h1>
+    </a>
+</div>
+
+<script>
+    // window.location.href = '/overzicht';
+</script>
 
 </body>
 

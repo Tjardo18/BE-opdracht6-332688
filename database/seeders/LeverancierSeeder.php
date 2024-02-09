@@ -64,6 +64,16 @@ class LeverancierSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'naam' => 'Quality Sweets',
+                'contactPersoon' => 'Johan Nooij',
+                'leverancierNummer' => 'L1029234586',
+                'mobiel' => '06-23458456',
+                'isActief' => 1,
+                'opmerkingen' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }
