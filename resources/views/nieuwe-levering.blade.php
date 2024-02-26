@@ -43,15 +43,22 @@
 
 
             <label for="aantal">Aantal producteenheden</label>
-            <input type="number" name="aantal" id="aantal" placeholder="20" min="1"><br>
+            <input type="number" name="aantal" id="aantal" min="1" required value="10"><br>
             <label for="datumEerstvolgendeLevering">Datum eerstvolgende levering</label>
-            <input type="date" name="datumEerstvolgendeLevering" id="datumEerstvolgendeLevering">
+            <input type="date" name="datumEerstvolgendeLevering" id="datumEerstvolgendeLevering" required
+                value="{{ date('Y-m-d') }}">
+
             <input type="submit" value="Sla op" id="add">
         </form>
 
     </div>
 
     <script src="{{ asset('js/column.js') }}"></script>
+
+    <script>
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementsByName("datumEerstvolgendeLevering")[0].setAttribute('min', today);
+    </script>
 
 </body>
 

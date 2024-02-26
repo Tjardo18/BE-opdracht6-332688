@@ -22,7 +22,7 @@ class NieuweLeveringController extends Controller
 
         $data = [
             'title' => 'Nieuwe Levering',
-            'leverancierId' => $leverancier[0]->id,
+            'leverancierId' => $leverancierId[0]->leverancierId,
             'naamLeverancier' => $leverancier[0]->Naam,
             'contactPersoon' => $leverancier[0]->ContactPersoon,
             'leverancierNummer' => $leverancier[0]->leverancierNummer,
@@ -33,23 +33,22 @@ class NieuweLeveringController extends Controller
         return view('nieuwe-levering', $data);
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        $formData = $request->validate([
-            'id' => null,
-            'leverancierId' => 'required',
-            'productId' => 'required',
-            'datumLevering' => 'required',
-            'aantal' => 'required',
-            'datumEerstvolgendeLevering' => 'required',
+        ProductPerLeverancier::create([
+            'leverancierId' => request('leverancierId'),
+            'productId' => request('productId'),
+            'datumLevering' => request('datumLevering'),
+            'aantal' => request('aantal'),
+            'datumEerstvolgendeLevering' => request('datumEerstvolgendeLevering'),
             'isActief' => 1,
             'opmerkingen' => null,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
-        $newLevering = ProductPerLeverancier::create($formData);
+        $LId = request('leverancierId');
 
-        return redirect(route('leveringen/{$id}'));
+        return redirect(route('leveringen.index', $LId));
     }
 }
