@@ -41,7 +41,7 @@ class LeveringController extends Controller
                             <td>$levering->VerpakkingsEenheid kg</td>
                             <td>$levering->DatumLevering</td>
                             <td>
-                                <a href='/#/$levering->Pid'>
+                                <a href='/nieuwe-levering/$levering->Pid'>
                                     <i class='bx bx-plus-circle' style='color: #ff2287'></i>
                                 </a>
                             </td>
