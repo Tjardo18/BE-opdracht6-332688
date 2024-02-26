@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Leverancier;
+use App\Models\Magazijn;
 use App\Models\ProductPerLeverancier;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class NieuweLeveringController extends Controller
 {
@@ -46,6 +48,20 @@ class NieuweLeveringController extends Controller
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        // Haal het huidige aantal aanwezig in het magazijn op
+        $currentAantal = Magazijn::where('productId', request('productId'))
+            ->value('aantalAanwezig');
+
+        // Bereken het nieuwe aantal door het huidige aantal op te tellen bij het aantal uit de request
+        $newAantal = $currentAantal + request('aantal');
+
+        // Voer de update uit
+        Magazijn::where('productId', request('productId'))
+            ->update([
+                'aantalAanwezig' => $newAantal,
+                'updated_at' => Carbon::now(),
+            ]);
 
         $LId = request('leverancierId');
 

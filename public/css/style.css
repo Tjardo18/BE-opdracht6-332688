@@ -145,6 +145,7 @@ label {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: #fff;
+    align-self: flex-start;
 }
 
 input[type="number"],
@@ -158,19 +159,13 @@ input[type="date"] {
 }
 
 input[type="submit"] {
-    /* width: 100%; */
     width: fit-content;
     padding: 0 10px;
-    margin-bottom: 10px;
     border-radius: 12px;
-
     background-color: #bc1b8f;
     border: 5px solid #e422b0;
-    
     color: #fff;
-    
     cursor: pointer;
-    
     font-weight: 800;
     font-family: 'Mochiy Pop One', sans-serif;
     text-transform: uppercase;

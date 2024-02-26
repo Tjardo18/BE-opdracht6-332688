@@ -30,7 +30,7 @@
         <h3>
             Contactpersoon: <span>{{ $contactPersoon }}</span>
         </h3>
-        <h3>
+        <h3 style="margin-bottom: 20px">
             Mobiel: <span>{{ $mobiel }}</span>
         </h3>
         <form method="post" action="{{ route('nieuwe-leveringen.store') }}">
@@ -43,10 +43,10 @@
 
 
             <label for="aantal">Aantal producteenheden</label>
-            <input type="number" name="aantal" id="aantal" min="1" required value="10"><br>
+            <input type="number" name="aantal" id="aantal" min="1" value="10" required><br>
             <label for="datumEerstvolgendeLevering">Datum eerstvolgende levering</label>
-            <input type="date" name="datumEerstvolgendeLevering" id="datumEerstvolgendeLevering" required
-                value="{{ date('Y-m-d') }}">
+            <input type="date" name="datumEerstvolgendeLevering" id="datumEerstvolgendeLevering"
+                value="{{ date('Y-m-d') }}" required>
 
             <input type="submit" value="Sla op" id="add">
         </form>
