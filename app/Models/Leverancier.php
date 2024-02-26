@@ -77,4 +77,14 @@ class Leverancier extends Model
             ->where('id', $id)
             ->get();
     }
+
+    public function getLeverancierByProductId($id)
+    {
+        return $this->select(
+            'leverancierId',
+        )
+            ->from('productperleverancier')
+            ->where('productId', $id)
+            ->get();
+    }
 }

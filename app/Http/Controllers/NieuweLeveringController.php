@@ -17,8 +17,8 @@ class NieuweLeveringController extends Controller
 
     public function index($id)
     {
-        // Dit is fout, je moet de leverancier ophalen op basis van de id die je meekrijgt
-        $leverancier = $this->leverancierModel->getLeverancierById(1);
+        $leverancierId = $this->leverancierModel->getLeverancierByProductId($id);
+        $leverancier = $this->leverancierModel->getLeverancierById($leverancierId[0]->leverancierId);
 
         $data = [
             'title' => 'Nieuwe Levering',
@@ -26,6 +26,7 @@ class NieuweLeveringController extends Controller
             'naamLeverancier' => $leverancier[0]->Naam,
             'contactPersoon' => $leverancier[0]->ContactPersoon,
             'leverancierNummer' => $leverancier[0]->leverancierNummer,
+            'productId' => $id,
             'mobiel' => $leverancier[0]->mobiel,
         ];
 
@@ -34,12 +35,20 @@ class NieuweLeveringController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $formData = $request->validate([
+            'id' => null,
+            'leverancierId' => 'required',
+            'productId' => 'required',
+            'datumLevering' => 'required',
             'aantal' => 'required',
             'datumEerstvolgendeLevering' => 'required',
+            'isActief' => 1,
+            'opmerkingen' => null,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
-        $newLevering = ProductPerLeverancier::create($data);
+        $newLevering = ProductPerLeverancier::create($formData);
 
         return redirect(route('leveringen/{$id}'));
     }

@@ -50,4 +50,5 @@ class ProductPerLeverancier extends Model
             ->orderBy('AantalAanwezig', 'DESC')
             ->get();
     }
+
 }
